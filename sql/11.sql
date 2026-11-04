@@ -22,4 +22,4 @@ JOIN LATERAL (
     LIMIT 1
 ) r ON true
 JOIN film f ON f.film_id = r.film_id
-ORDER BY c.first_name, c.last_name;
+ORDER BY c.last_name, c.first_name;

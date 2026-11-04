@@ -5,7 +5,7 @@
 SELECT country, sum(amount) AS total_payments
 FROM payment
 JOIN rental USING (rental_id)
-JOIN customer USING (customer_id)
+JOIN customer ON rental.customer_id = customer.customer_id
 JOIN address USING (address_id)
 JOIN city USING (city_id)
 JOIN country USING (country_id)

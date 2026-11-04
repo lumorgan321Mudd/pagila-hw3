@@ -24,7 +24,7 @@ actor_film_revenue AS (
            fr.film_id,
            fr.title,
            fr.revenue,
-           rank() OVER (PARTITION BY a.actor_id ORDER BY fr.revenue DESC) AS rank
+           rank() OVER (PARTITION BY a.actor_id ORDER BY fr.revenue DESC, fr.title) AS rank
     FROM actor a
     JOIN film_actor fa USING (actor_id)
     JOIN film_revenue fr USING (film_id)

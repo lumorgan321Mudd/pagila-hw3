@@ -22,4 +22,4 @@ FROM actor
 WHERE actor_id IN (SELECT actor_id FROM bacall2)
   AND actor_id NOT IN (SELECT actor_id FROM bacall1)
   AND actor_id <> (SELECT actor_id FROM actor WHERE first_name = 'RUSSELL' AND last_name = 'BACALL')
-ORDER BY first_name, last_name;
+ORDER BY "Actor Name";

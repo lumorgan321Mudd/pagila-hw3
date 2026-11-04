@@ -22,8 +22,8 @@ FROM (
     SELECT customer_id,
            name,
            total_payment,
-           ntile(10) OVER (ORDER BY total_payment) AS percentile
+           ntile(100) OVER (ORDER BY total_payment) AS percentile
     FROM customer_totals
 ) t
-WHERE percentile >= 9
+WHERE percentile >= 90
 ORDER BY name;

@@ -15,4 +15,4 @@ WHERE actor_id IN (
     WHERE fa1.actor_id = (SELECT actor_id FROM actor WHERE first_name = 'RUSSELL' AND last_name = 'BACALL')
       AND fa2.actor_id <> fa1.actor_id
 )
-ORDER BY first_name, last_name;
+ORDER BY "Actor Name";
