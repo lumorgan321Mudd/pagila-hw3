@@ -18,8 +18,8 @@ category_film_rentals AS (
     SELECT c.name,
            fr.title,
            fr.total_rentals,
-           row_number() OVER (PARTITION BY c.name ORDER BY fr.total_rentals DESC, fr.title DESC) AS rank
            row_number() OVER (PARTITION BY c.name ORDER BY fr.total_rentals DESC, fr.title ASC) AS rank
+    FROM category c
     JOIN film_category fc USING (category_id)
     JOIN film_rentals fr USING (film_id)
 )
